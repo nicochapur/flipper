@@ -1,0 +1,87 @@
+# depslib dependency file v1.0
+1514140574 source:c:\users\usuario\documents\flipper\src\main.cpp
+	<iostream>
+
+1622241240 source:c:\users\usuario\documents\flipper\src\src\barrel.cpp
+	"Barrel.h"
+
+1622589842 c:\users\usuario\documents\flipper\src\include\barrel.h
+
+1622240499 source:c:\users\usuario\documents\flipper\src\src\basescene.cpp
+	"BaseScene.h"
+
+1622589912 c:\users\usuario\documents\flipper\src\include\basescene.h
+
+1622241633 source:c:\users\usuario\documents\flipper\src\src\endscene.cpp
+	"EndScene.h"
+
+1622589911 c:\users\usuario\documents\flipper\src\include\endscene.h
+
+1622240785 source:c:\users\usuario\documents\flipper\src\src\gameplay.cpp
+	"GamePlay.h"
+
+1622589842 c:\users\usuario\documents\flipper\src\include\gameplay.h
+
+1622241474 source:c:\users\usuario\documents\flipper\src\src\meteor.cpp
+	"Meteor.h"
+
+1622597697 c:\users\usuario\documents\flipper\src\include\meteor.h
+
+1622241200 source:c:\users\usuario\documents\flipper\src\src\object.cpp
+	"Object.h"
+
+1622241227 c:\users\usuario\documents\flipper\src\include\object.h
+
+1622241544 source:c:\users\usuario\documents\flipper\src\src\spaceship.cpp
+	"SpaceShip.h"
+
+1622241604 c:\users\usuario\documents\flipper\src\include\spaceship.h
+
+1622240717 source:c:\users\usuario\documents\flipper\src\src\titlescene.cpp
+	"TitleScene.h"
+
+1622241289 c:\users\usuario\documents\flipper\src\include\titlescene.h
+
+1514140574 source:c:\users\usuario\documents\flipper\flipper-project\main.cpp
+	<iostream>
+
+1622241240 source:c:\users\usuario\documents\flipper\flipper-project\src\barrel.cpp
+	"Barrel.h"
+
+1622589842 c:\users\usuario\documents\flipper\flipper-project\include\barrel.h
+
+1622240499 source:c:\users\usuario\documents\flipper\flipper-project\src\basescene.cpp
+	"BaseScene.h"
+
+1622589912 c:\users\usuario\documents\flipper\flipper-project\include\basescene.h
+
+1622241633 source:c:\users\usuario\documents\flipper\flipper-project\src\endscene.cpp
+	"EndScene.h"
+
+1622589911 c:\users\usuario\documents\flipper\flipper-project\include\endscene.h
+
+1622240785 source:c:\users\usuario\documents\flipper\flipper-project\src\gameplay.cpp
+	"GamePlay.h"
+
+1622589842 c:\users\usuario\documents\flipper\flipper-project\include\gameplay.h
+
+1622241474 source:c:\users\usuario\documents\flipper\flipper-project\src\meteor.cpp
+	"Meteor.h"
+
+1622597697 c:\users\usuario\documents\flipper\flipper-project\include\meteor.h
+
+1622241200 source:c:\users\usuario\documents\flipper\flipper-project\src\object.cpp
+	"Object.h"
+
+1622241227 c:\users\usuario\documents\flipper\flipper-project\include\object.h
+
+1622241544 source:c:\users\usuario\documents\flipper\flipper-project\src\spaceship.cpp
+	"SpaceShip.h"
+
+1622241604 c:\users\usuario\documents\flipper\flipper-project\include\spaceship.h
+
+1622240717 source:c:\users\usuario\documents\flipper\flipper-project\src\titlescene.cpp
+	"TitleScene.h"
+
+1622241289 c:\users\usuario\documents\flipper\flipper-project\include\titlescene.h
+

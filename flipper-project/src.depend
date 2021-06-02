@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1514140574 source:c:\users\usuario\documents\flipper\src\main.cpp
+	<iostream>
+
+1622240499 source:c:\users\usuario\documents\flipper\src\src\basescene.cpp
+	"BaseScene.h"
+
+1622589912 c:\users\usuario\documents\flipper\src\include\basescene.h
+
+1622241200 source:c:\users\usuario\documents\flipper\src\src\object.cpp
+	"Object.h"
+
+1622241227 c:\users\usuario\documents\flipper\src\include\object.h
+
+1622240717 source:c:\users\usuario\documents\flipper\src\src\titlescene.cpp
+	"TitleScene.h"
+
+1622241289 c:\users\usuario\documents\flipper\src\include\titlescene.h
+
+1622241240 source:c:\users\usuario\documents\flipper\src\src\barrel.cpp
+	"Barrel.h"
+
+1622589842 c:\users\usuario\documents\flipper\src\include\barrel.h
+
+1622240880 source:c:\users\usuario\documents\flipper\src\src\game.cpp
+	"Game.h"
+
+1622589842 c:\users\usuario\documents\flipper\src\include\game.h
+
+1622240785 source:c:\users\usuario\documents\flipper\src\src\gameplay.cpp
+	"GamePlay.h"
+
+1622589842 c:\users\usuario\documents\flipper\src\include\gameplay.h
+
+1622241474 source:c:\users\usuario\documents\flipper\src\src\meteor.cpp
+	"Meteor.h"
+
+1622597697 c:\users\usuario\documents\flipper\src\include\meteor.h
+
+1622241633 source:c:\users\usuario\documents\flipper\src\src\endscene.cpp
+	"EndScene.h"
+
+1622589911 c:\users\usuario\documents\flipper\src\include\endscene.h
+
+1622241544 source:c:\users\usuario\documents\flipper\src\src\spaceship.cpp
+	"SpaceShip.h"
+
+1622241604 c:\users\usuario\documents\flipper\src\include\spaceship.h
+
