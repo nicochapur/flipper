@@ -5,14 +5,17 @@
 #include <SFML/Graphics/Texture.hpp>
 #include "Object.h"
 #include "Meteor.h"
+#include "Collisionable.h"
 
-class Spaceship: public Object{
+class Spaceship: public Object ,public Collisionable{
     public:
         Spaceship(const sf::Vector2f &pos);
         void update();
+        bool isCollision(const Collisionable& _object)const;
+        sf::FloatRect getBounds() const;
         void draw(sf::RenderWindow &w) override;
         sf::Sprite &getSprite();
-        //bool collidesWithMeteor(Meteor *m);
+
     private:
         sf::Sprite spSpaceship;
         sf::Texture texSpaceship;

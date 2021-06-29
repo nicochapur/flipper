@@ -5,10 +5,13 @@
 #include "Meteor.h"
 #include "Defender_L.h"
 #include "Defender_R.h"
+#include "Collisionable.h"
 #include "Barrel.h"
 #include "Spaceship.h"
 #include <vector>
 #include <string>
+#include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -18,9 +21,6 @@ class Game{
         sf::Texture texBackground;//fondo
         sf::Sprite spBackground;
         sf::Music music;
-        //float score;
-        //sf::Text scoreText;
-        //sf::Font fontScoreText;
         Defender_L *defender_l;
         Defender_R *defender_r;
         Barrel *barrel;
@@ -29,17 +29,25 @@ class Game{
         Spaceship *spaceship;
         Meteor *meteor;
 
+        int vida = 3;
+        int score = 0;
+        //textos
+        sf::Font fuente;
+        sf::Text txt;
+        sf::Text vidas;
+
         vector<Object *> objects;
 
         void init();
         void update();
         void draw();
+        void colisiones_meteor();
+        void aumentarScore();
 
     public:
         Game();
         ~Game();
         void run();
-        void colisiones_meteor();
         void add(Object *o);
         bool pause = false;
 

@@ -15,6 +15,7 @@
 					<Add option="-g" />
 					<Add option="-DSFML_STATIC" />
 					<Add directory="SFML/include" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add library="sfml-system" />
@@ -33,6 +34,7 @@
 					<Add option="-O2" />
 					<Add option="-DSFML_STATIC" />
 					<Add directory="SFML/include" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -56,6 +58,7 @@
 			<Add directory="SFML/lib" />
 		</Linker>
 		<Unit filename="include/Barrel.h" />
+		<Unit filename="include/Collisionable.h" />
 		<Unit filename="include/Defender_L.h" />
 		<Unit filename="include/Defender_R.h" />
 		<Unit filename="include/Game.h" />
@@ -66,6 +69,7 @@
 		<Unit filename="include/Spaceship.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Barrel.cpp" />
+		<Unit filename="src/Collisionable.cpp" />
 		<Unit filename="src/Defender_L.cpp" />
 		<Unit filename="src/Defender_R.cpp" />
 		<Unit filename="src/Game.cpp" />

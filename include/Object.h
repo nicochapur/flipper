@@ -1,6 +1,6 @@
 #ifndef OBJECT_H_INCLUDED
 #define OBJECT_H_INCLUDED
-#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics.hpp>
 
 class Object{
 

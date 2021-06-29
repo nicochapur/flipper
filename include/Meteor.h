@@ -10,20 +10,17 @@
 #include "Barrel.h"
 #include "Spaceship.h"
 #include "Meteor.h"
+#include "Collisionable.h"
 
-
-class Meteor: public Object{
+class Meteor: public Object ,public Collisionable{
     public:
         Meteor();
         void update() override;
+        bool isCollision(const Collisionable& _object)const;
+        sf::FloatRect getBounds() const;
         void draw(sf::RenderWindow &w) override;
         sf::Sprite &getSprite();
         sf::Vector2f velMeteor;
-
-        //bool collidesWithDefender_L(Defender_L *l);
-        //bool collidesWithDefender_R(Defender_R *r);
-        //bool collidesWithBarrel(Barrel *b);
-        //bool collidesWithSpaceship(Spaceship *s);
 
     private:
         sf::Sprite spMeteor;
