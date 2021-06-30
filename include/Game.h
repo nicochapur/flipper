@@ -1,55 +1,22 @@
 #ifndef GAME_H
 #define GAME_H
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include "Meteor.h"
-#include "Defender_L.h"
-#include "Defender_R.h"
-#include "Collisionable.h"
-#include "Barrel.h"
-#include "Spaceship.h"
-#include <vector>
-#include <string>
-#include <iostream>
-#include <sstream>
+#include "BaseScene.h"
 
-using namespace std;
 
 class Game{
+    public:
+        void run();
+        void switchScene(BaseScene *scene);
+        static Game &getInstance();
+        static Game &create(const sf::VideoMode &videoMode, BaseScene *scene, const string &name = "");
+
     private:
-        sf::RenderWindow w; //sfml
-        sf::Texture texBackground;//fondo
-        sf::Sprite spBackground;
-        sf::Music music;
-        Defender_L *defender_l;
-        Defender_R *defender_r;
-        Barrel *barrel;
-        Barrel *barrel_l;
-        Barrel *barrel_r;
-        Spaceship *spaceship;
-        Meteor *meteor;
-
-        int vida = 3;
-        int score = 0;
-        //textos
-        sf::Font fuente;
-        sf::Text txt;
-        sf::Text vidas;
-
-        vector<Object *> objects;
-
-        void init();
+        sf::RenderWindow w;
+        BaseScene *currentScene, *nextScene;
         void update();
         void draw();
-        void colisiones_meteor();
-        void aumentarScore();
-
-    public:
+        static Game *instance;
         Game();
-        ~Game();
-        void run();
-        void add(Object *o);
-        bool pause = false;
-
 };
+
 #endif // GAME_H
