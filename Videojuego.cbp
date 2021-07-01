@@ -64,6 +64,7 @@
 		<Unit filename="include/Defender_R.h" />
 		<Unit filename="include/EndGame.h" />
 		<Unit filename="include/Game.h" />
+		<Unit filename="include/Global.h" />
 		<Unit filename="include/Menu.h" />
 		<Unit filename="include/Meteor.h" />
 		<Unit filename="include/Object.h">
@@ -74,11 +75,11 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Barrel.cpp" />
 		<Unit filename="src/BaseScene.cpp" />
-		<Unit filename="src/Collisionable.cpp" />
 		<Unit filename="src/Defender_L.cpp" />
 		<Unit filename="src/Defender_R.cpp" />
 		<Unit filename="src/EndGame.cpp" />
 		<Unit filename="src/Game.cpp" />
+		<Unit filename="src/Global.cpp" />
 		<Unit filename="src/Menu.cpp" />
 		<Unit filename="src/Meteor.cpp" />
 		<Unit filename="src/PlayScene.cpp" />

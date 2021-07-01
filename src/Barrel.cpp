@@ -1,5 +1,4 @@
 #include "../include/Barrel.h"
-
 #include <SFML/Window/Keyboard.hpp>
 
 Barrel::Barrel(const sf::Vector2f &pos){
@@ -17,9 +16,13 @@ void Barrel::draw(sf::RenderWindow &w){
 sf::Sprite &Barrel::getSprite(){
     return spbarrel;}
 
-/*bool Barrel::collidesWithMeteor(Meteor *m){
-    sf::FloatRect barrelRect = getSprite().getGlobalBounds();
-    sf::FloatRect meteorRect = m-> getSprite().getGlobalBounds();
-    return barrelRect.intersects(meteorRect);
-}*/
+bool Barrel::isCollision(const Collisionable& _object)const{
+   return getBounds().intersects(_object.getBounds());
+}
+
+sf::FloatRect Barrel::getBounds()const{
+    sf::FloatRect rect= spbarrel.getGlobalBounds();
+    rect.left = spbarrel.getPosition().x;
+    rect.top = spbarrel.getPosition().y;
+    return rect;}
 

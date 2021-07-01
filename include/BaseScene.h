@@ -13,8 +13,8 @@ class BaseScene
         BaseScene();
         virtual void update();
         virtual void draw(sf::RenderWindow &w);
-        void add(Object *e);
-        void remove(Object *e);
+        void add(Object *o);
+        void remove(Object *o);
 
     private:
         vector<Object *> objects;

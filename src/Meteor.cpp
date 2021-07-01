@@ -17,27 +17,34 @@ void Meteor::update(){
     /* Aquí iniciamos en un lugar random el meteorito y luego lo mantenemos
     en un rango para que no se escape de la pantalla.*/
     spMeteor.move(velMeteor);
-
     sf::Vector2f meteorPos = spMeteor.getPosition();
+    //gravedad
+    if(meteorPos.y > 0 && meteorPos.y < 381){
+        velMeteor.y += 0.5;
+    }
     if(meteorPos.x < 0){
-        spMeteor.setPosition(meteorPos.x, rand()%381);
+        spMeteor.setPosition(0, meteorPos.y);
         velMeteor.x *= -1;
+        spMeteor.setRotation(rand()%360);
     }
     if(meteorPos.x > 388 ){
-        spMeteor.setPosition(meteorPos.x, rand()%381);
+        spMeteor.setPosition(388, meteorPos.y);
         velMeteor.x *= -1;
+        spMeteor.setRotation(rand()%360);
     }
     if(meteorPos.y < 0){
-        spMeteor.setPosition(rand()%381,meteorPos.y);
+        spMeteor.setPosition(meteorPos.x,0);
         velMeteor.y *= -1;
+        spMeteor.setRotation(rand()%360);
     }
     if(meteorPos.y > 381){
-        spMeteor.setPosition(rand()%381,meteorPos.y);
+        spMeteor.setPosition(meteorPos.x,381);
         velMeteor.y *= -1;
+        spMeteor.setRotation(360);
     }
-    spMeteor.setPosition(meteorPos);
 
 }
+
 
 void Meteor::draw(sf::RenderWindow &w){
     w.draw(spMeteor);
@@ -45,28 +52,16 @@ void Meteor::draw(sf::RenderWindow &w){
 
 sf::Sprite &Meteor::getSprite(){
     return spMeteor;}
-/*
-bool Meteor::collidesWithDefender_L(Defender_L *l){
-    sf::FloatRect meteorRect = getSprite().getGlobalBounds();
-    sf::FloatRect defender_lRect = defender_l-> getSprite().getGlobalBounds();
-    return meteorRect.intersects(defender_lRect);
+
+
+bool Meteor::isCollision(const Collisionable& _object)const{
+    bool collision = getBounds().intersects(_object.getBounds());
+   return collision;
 }
 
-bool Meteor::collidesWithDefender_R(Defender_R *defender_r){
-    sf::FloatRect meteorRect = getSprite().getGlobalBounds();
-    sf::FloatRect defender_RRect = defender_r-> getSprite().getGlobalBounds();
-    return meteorRect.intersects(defender_rRect);
-}
+sf::FloatRect Meteor::getBounds()const{
+    sf::FloatRect rect= spMeteor.getGlobalBounds();
+    rect.left = spMeteor.getPosition().x;
+    rect.top = spMeteor.getPosition().y;
+    return rect;}
 
-bool Meteor::collidesWithBarrel(Barrel *barrel){
-    sf::FloatRect meteorRect = getSprite().getGlobalBounds();
-    sf::FloatRect barrelRect = barrel-> getSprite().getGlobalBounds();
-    return meteorRect.intersects(barrelRect);
-}
-
-bool Meteor::collidesWithSpaceship(Spaceship *spaceship){
-    sf::FloatRect meteorRect = getSprite().getGlobalBounds();
-    sf::FloatRect spaceshipRect = spaceship-> getSprite().getGlobalBounds();
-    return meteorRect.intersects(spaceshipRect);
-}
-*/

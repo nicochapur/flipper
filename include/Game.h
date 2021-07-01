@@ -17,6 +17,7 @@ class Game{
         void draw();
         static Game *instance;
         Game();
+        bool pause = false;
 };
 
 #endif // GAME_H

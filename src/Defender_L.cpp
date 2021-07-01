@@ -30,8 +30,12 @@ void Defender_L::draw(sf::RenderWindow &w){
 sf::Sprite &Defender_L::getSprite(){
     return spDefender_L;}
 
-/*bool Defender_L::collidesWithMeteor(Meteor *m){
-    sf::FloatRect defender_lRect = getSprite().getGlobalBounds();
-    sf::FloatRect meteorRect = m-> getSprite().getGlobalBounds();
-    return defender_lRect.intersects(meteorRect);
-}*/
+bool Defender_L::isCollision(const Collisionable& _object)const{
+   return getBounds().intersects(_object.getBounds());
+}
+
+sf::FloatRect Defender_L::getBounds()const{
+    sf::FloatRect rect= spDefender_L.getGlobalBounds();
+    rect.left = spDefender_L.getPosition().x;
+    rect.top = spDefender_L.getPosition().y;
+    return rect;}

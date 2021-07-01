@@ -4,6 +4,7 @@
 #include <SFML/Audio.hpp>
 #include "Meteor.h"
 #include "Defender_L.h"
+#include "Global.h"
 #include "Defender_R.h"
 #include "Collisionable.h"
 #include "Barrel.h"
@@ -16,12 +17,12 @@
 
 using namespace std;
 
-class PlayScene: public BaseScene{
+class PlayScene: public BaseScene, public Global{
     private:
         sf::RenderWindow w; //sfml
         sf::Texture texBackground;//fondo
         sf::Sprite spBackground;
-        sf::Music music;
+        //sf::Music music;
         Defender_L *defender_l;
         Defender_R *defender_r;
         Barrel *barrel;
@@ -37,7 +38,7 @@ class PlayScene: public BaseScene{
         sf::Text txt;
         sf::Text vidas;
 
-        vector<Object *> objects;
+        //vector<Object *> objects;
 
         void init();
         void colisiones_meteor();
@@ -46,8 +47,8 @@ class PlayScene: public BaseScene{
     public:
         PlayScene();
         ~PlayScene();
-        void run();
-        void add(Object *o);
+        //void run();
+        //void add(Object *o);
         bool pause = false;
 
         void update();

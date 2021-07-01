@@ -1,20 +1,17 @@
 #include "Menu.h"
+#include "Global.h"
 #include <sstream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <cstdlib>
 #include <iostream>
 #include "Game.h"
+#include "Global.h"
 #include "PlayScene.h"
 
 using namespace std;
 Menu::Menu(){
-    //ventana
-//    w.create(sf::VideoMode(400,500), "SPACESHIP");
-
-    // actualizaciones por segundo
-//    w.setFramerateLimit(60);
-
+    cout<<Global::highScore;
     //fondo
     texBackground.loadFromFile("assets/images/background.jpg"); /// TO DO modificar fondo sin lineas
     spBackground.setTexture(texBackground);
@@ -57,17 +54,19 @@ Menu::Menu(){
 }
 
 void Menu::update(){
+
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Tab)){//si se aprieta esc se cierra
+        cout << "TAB PRESS";
         Game::getInstance().switchScene(new PlayScene());
     }
 }
 
 void Menu::draw(sf::RenderWindow &w){
-    w.clear(sf::Color::Black); //limpia la pantalla
+    //w.clear(sf::Color::Black); //limpia la pantalla
     w.draw(spBackground);
     w.draw(titleText);
     w.draw(playText);
     w.draw(scoreText);
     w.draw(exitText);
-    w.display();
+    //w.display();
 }

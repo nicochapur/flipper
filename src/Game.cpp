@@ -1,6 +1,8 @@
 #include "Game.h"
 #include <iostream>
 #include <sstream>
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
 
 using namespace std;
 
@@ -36,21 +38,30 @@ void Game::run(){
         while(w.pollEvent(e)){
             if(e.type == sf::Event::Closed)
                 w.close();//trabaja con una cola de eventos
-        }
 
+        }
         update();
         draw();
+        if(nextScene != nullptr){
+            delete currentScene;
+            currentScene = nextScene;
+            nextScene = nullptr;
+        }
     }
 }
 
 void Game::update(){
+    currentScene->update();
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Backspace)){//si se aprieta esc se cierra
         w.close();
     }
+
 }
 
 void Game::draw(){
-
+    w.clear(sf::Color::Black);
+    currentScene->draw(w);
+    w.display();
 }
 
 void Game::switchScene(BaseScene *scene){

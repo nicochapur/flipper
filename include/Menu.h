@@ -6,14 +6,15 @@
 #include <string>
 #include "./Meteor.h"
 #include "./BaseScene.h"
+#include "./Global.h"
 
 using namespace std;
 
-class Menu: public BaseScene{
+class Menu: public BaseScene, public Global{
     private:
         sf::Texture texBackground;//fondo
         sf::Sprite spBackground;
-        sf::Music music;
+        //sf::Music music;
 
         sf::Font textFont;
         sf::Text titleText;

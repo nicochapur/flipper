@@ -12,12 +12,15 @@ void Spaceship::update(){}
 void Spaceship::draw(sf::RenderWindow &w){
     w.draw(spSpaceship);
 }
+bool Spaceship::isCollision(const Collisionable& _object)const{
+   return getBounds().intersects(_object.getBounds());
+}
 
 sf::Sprite &Spaceship::getSprite(){
     return spSpaceship;}
 
-/*bool Spaceship::collidesWithMeteor(Meteor *m){
-    sf::FloatRect spaceshipRect = getSprite().getGlobalBounds();
-    sf::FloatRect meteorRect = m-> getSprite().getGlobalBounds();
-    return spaceshipRect.intersects(meteorRect);
-}*/
+sf::FloatRect Spaceship::getBounds()const{
+    sf::FloatRect rect= spSpaceship.getGlobalBounds();
+    rect.left = spSpaceship.getPosition().x;
+    rect.top = spSpaceship.getPosition().y;
+    return rect;}
