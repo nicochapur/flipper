@@ -2305,7 +2305,7 @@
 1623980835 source:c:\users\user\desktop\facultad\laboratorio2\spaceship\src\collisionable.cpp
 	"Collisionable.h"
 
-1622926124 source:c:\users\usuario\documents\flipper\src\barrel.cpp
+1625148470 source:c:\users\usuario\documents\flipper\src\barrel.cpp
 	"../include/Barrel.h"
 	<SFML/Window/Keyboard.hpp>
 
@@ -2766,19 +2766,19 @@
 	"Meteor.h"
 	"Collisionable.h"
 
-1623283036 source:c:\users\usuario\documents\flipper\src\defender_l.cpp
+1625148470 source:c:\users\usuario\documents\flipper\src\defender_l.cpp
 	"../include/Defender_L.h"
 	<SFML/Window/Keyboard.hpp>
 	"math.h"
 
-1623282834 source:c:\users\usuario\documents\flipper\src\defender_r.cpp
+1625148470 source:c:\users\usuario\documents\flipper\src\defender_r.cpp
 	"../include/Defender_R.h"
 	<SFML/Window/Keyboard.hpp>
 
-1623368250 source:c:\users\usuario\documents\flipper\src\meteor.cpp
+1625148470 source:c:\users\usuario\documents\flipper\src\meteor.cpp
 	"../include/Meteor.h"
 
-1623117992 source:c:\users\usuario\documents\flipper\src\spaceship.cpp
+1625148470 source:c:\users\usuario\documents\flipper\src\spaceship.cpp
 	"../include/Spaceship.h"
 	<SFML/Window/Keyboard.hpp>
 
@@ -2895,15 +2895,17 @@
 	<SFML/Audio/Export.hpp>
 	<string>
 
-1625022731 source:c:\users\usuario\documents\flipper\src\game.cpp
+1625148470 source:c:\users\usuario\documents\flipper\src\game.cpp
 	"Game.h"
 	<iostream>
 	<sstream>
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
 
-1625021199 c:\users\usuario\documents\flipper\include\game.h
+1625148470 c:\users\usuario\documents\flipper\include\game.h
 	"BaseScene.h"
 
-1625022068 c:\users\usuario\documents\flipper\include\basescene.h
+1625148470 c:\users\usuario\documents\flipper\include\basescene.h
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	"Object.h"
@@ -2916,32 +2918,39 @@
 	"Menu.h"
 	"Game.h"
 
-1625020986 c:\users\usuario\documents\flipper\include\menu.h
+1625148470 c:\users\usuario\documents\flipper\include\menu.h
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	<vector>
 	<string>
 	"./Meteor.h"
 	"./BaseScene.h"
+	"./Global.h"
 
-1625022085 source:c:\users\usuario\documents\flipper\src\basescene.cpp
+1625148470 source:c:\users\usuario\documents\flipper\src\basescene.cpp
 	"BaseScene.h"
+	<string>
+	<iostream>
+	<sstream>
 
-1625022571 source:c:\users\usuario\documents\flipper\src\menu.cpp
+1625180374 source:c:\users\usuario\documents\flipper\src\menu.cpp
 	"Menu.h"
+	"Global.h"
 	<sstream>
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<cstdlib>
 	<iostream>
 	"Game.h"
+	"Global.h"
 	"PlayScene.h"
 
-1625021871 c:\users\usuario\documents\flipper\include\playscene.h
+1625148470 c:\users\usuario\documents\flipper\include\playscene.h
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	"Meteor.h"
 	"Defender_L.h"
+	"Global.h"
 	"Defender_R.h"
 	"Collisionable.h"
 	"Barrel.h"
@@ -2952,8 +2961,10 @@
 	<iostream>
 	<sstream>
 
-1625022134 source:c:\users\usuario\documents\flipper\src\playscene.cpp
+1625148470 source:c:\users\usuario\documents\flipper\src\playscene.cpp
 	"../include/PlayScene.h"
+	"Global.h"
+	"Game.h"
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<cstdlib>
@@ -4284,5 +4295,10 @@
 1625111354 c:\users\user\desktop\nueva carpeta\include\global.h
 
 1625110908 source:c:\users\user\desktop\nueva carpeta\src\global.cpp
+	"Global.h"
+
+1625148470 c:\users\usuario\documents\flipper\include\global.h
+
+1625148470 source:c:\users\usuario\documents\flipper\src\global.cpp
 	"Global.h"
 

@@ -6,15 +6,14 @@
 #include <cstdlib>
 #include <iostream>
 #include "Game.h"
-#include "Global.h"
 #include "PlayScene.h"
 
 using namespace std;
 Menu::Menu(){
-    cout<<Global::highScore;
     //fondo
-    texBackground.loadFromFile("assets/images/background.jpg"); /// TO DO modificar fondo sin lineas
+    texBackground.loadFromFile("assets/images/menu-background.jpg"); /// TO DO modificar fondo sin lineas
     spBackground.setTexture(texBackground);
+    spBackground.setScale(0.5, 0.5);
 
     // titulo menu
     if(!textFont.loadFromFile("assets/fonts/menu-font.ttf")){
@@ -36,14 +35,14 @@ Menu::Menu(){
     // opcion 2 menu: PLAY
     playText.setFont(textFont);
     playText.setColor(sf::Color::White);
-    playText.setString("Presione TAB para comenzar");
+    playText.setString("Press TAB to start");
     playText.setCharacterSize(16);
     playText.setPosition(sf::Vector2f((400-playText.getGlobalBounds().width)/2.0, 380));
 
     // opcion 3 menu: EXIT
     exitText.setFont(textFont);
     exitText.setColor(sf::Color::Yellow);
-    exitText.setString("[backspace] - Salir");
+    exitText.setString("[backspace] - Exit");
     exitText.setCharacterSize(10);
     exitText.setPosition(230, 480);
 
