@@ -10,36 +10,44 @@
 
 using namespace std;
 Menu::Menu(){
-    //fondo
-    texBackground.loadFromFile("assets/images/menu-background.jpg"); /// TO DO modificar fondo sin lineas
+    // LOAD BACKGROUND IMAGE
+    texBackground.loadFromFile("assets/images/menu-background.jpg");
     spBackground.setTexture(texBackground);
     spBackground.setScale(0.5, 0.5);
 
-    // titulo menu
+    // LOAD FONT
     if(!textFont.loadFromFile("assets/fonts/menu-font.ttf")){
         cout << "Error loading font" << endl;
     };
+    // GAME TITLE
     titleText.setFont(textFont);
     titleText.setColor(sf::Color::White);
     titleText.setString("Flipper");
     titleText.setCharacterSize(48);
     titleText.setPosition(sf::Vector2f((400-titleText.getGlobalBounds().width)/2.0, 50));
 
-    // opcion 1 menu: HIGHSCORE
-    scoreText.setFont(textFont);
-    scoreText.setColor(sf::Color::White);
-    scoreText.setString("Highscore");
-    scoreText.setCharacterSize(24);
-    scoreText.setPosition(sf::Vector2f((400-scoreText.getGlobalBounds().width)/2.0, 200));
+    // HIGHSCORE TITLE
+    highScoreText.setFont(textFont);
+    highScoreText.setColor(sf::Color::White);
+    highScoreText.setString("Highscore");
+    highScoreText.setCharacterSize(24);
+    highScoreText.setPosition(sf::Vector2f((400-highScoreText.getGlobalBounds().width)/2.0, 200));
 
-    // opcion 2 menu: PLAY
+    // HIGHSCORE VALUE
+    highScoreValue.setFont(textFont);
+    highScoreValue.setColor(sf::Color::White);
+    highScoreValue.setString(to_string(Global::highScore));
+    highScoreValue.setCharacterSize(32);
+    highScoreValue.setPosition(sf::Vector2f((400-highScoreValue.getGlobalBounds().width)/2.0, 250));
+
+    // PLAY
     playText.setFont(textFont);
     playText.setColor(sf::Color::White);
     playText.setString("Press TAB to start");
     playText.setCharacterSize(16);
     playText.setPosition(sf::Vector2f((400-playText.getGlobalBounds().width)/2.0, 380));
 
-    // opcion 3 menu: EXIT
+    // EXIT OPTION
     exitText.setFont(textFont);
     exitText.setColor(sf::Color::Yellow);
     exitText.setString("[backspace] - Exit");
@@ -55,7 +63,6 @@ Menu::Menu(){
 void Menu::update(){
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Tab)){//si se aprieta esc se cierra
-        cout << "TAB PRESS";
         Game::getInstance().switchScene(new PlayScene());
     }
 }
@@ -65,7 +72,10 @@ void Menu::draw(sf::RenderWindow &w){
     w.draw(spBackground);
     w.draw(titleText);
     w.draw(playText);
-    w.draw(scoreText);
+    if (Global::highScore != 0) {
+        w.draw(highScoreText);
+        w.draw(highScoreValue);
+    }
     w.draw(exitText);
     //w.display();
 }

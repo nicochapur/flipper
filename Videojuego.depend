@@ -2782,14 +2782,20 @@
 	"../include/Spaceship.h"
 	<SFML/Window/Keyboard.hpp>
 
-1624931627 source:c:\users\usuario\documents\flipper\src\endgame.cpp
+1625948772 source:c:\users\usuario\documents\flipper\src\endgame.cpp
 	"EndGame.h"
+	<iostream>
+	"Game.h"
+	"Menu.h"
+	"PlayScene.h"
 
-1625005030 c:\users\usuario\documents\flipper\include\endgame.h
+1625949037 c:\users\usuario\documents\flipper\include\endgame.h
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	<vector>
 	<string>
+	"./BaseScene.h"
+	"./Global.h"
 
 1525812020 c:\users\usuario\documents\flipper\sfml\include\sfml\audio.hpp
 	<SFML/System.hpp>
@@ -2911,14 +2917,15 @@
 	"Object.h"
 	<vector>
 
-1625021255 source:c:\users\usuario\documents\flipper\main.cpp
+1625949005 source:c:\users\usuario\documents\flipper\main.cpp
 	<stdlib.h>
 	<time.h>
 	"BaseScene.h"
 	"Menu.h"
 	"Game.h"
+	"EndGame.h"
 
-1625148470 c:\users\usuario\documents\flipper\include\menu.h
+1625949037 c:\users\usuario\documents\flipper\include\menu.h
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	<vector>
@@ -2933,7 +2940,7 @@
 	<iostream>
 	<sstream>
 
-1625180374 source:c:\users\usuario\documents\flipper\src\menu.cpp
+1625948772 source:c:\users\usuario\documents\flipper\src\menu.cpp
 	"Menu.h"
 	"Global.h"
 	<sstream>
@@ -2942,10 +2949,9 @@
 	<cstdlib>
 	<iostream>
 	"Game.h"
-	"Global.h"
 	"PlayScene.h"
 
-1625148470 c:\users\usuario\documents\flipper\include\playscene.h
+1625948841 c:\users\usuario\documents\flipper\include\playscene.h
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	"Meteor.h"
@@ -2961,7 +2967,7 @@
 	<iostream>
 	<sstream>
 
-1625148470 source:c:\users\usuario\documents\flipper\src\playscene.cpp
+1625948841 source:c:\users\usuario\documents\flipper\src\playscene.cpp
 	"../include/PlayScene.h"
 	"Global.h"
 	"Game.h"

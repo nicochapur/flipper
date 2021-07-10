@@ -83,9 +83,9 @@ void PlayScene::colisiones_meteor() //esto se encuentra funcional pero me gustar
     }
     if(meteor->isCollision(*spaceship)){
         vida--;
-        vidas.setString("vidas " +to_string(vida));
+        vidas.setString("vidas " + to_string(vida));
         if(vida==0){
-            if(score> Global::highScore){
+            if(score > Global::highScore){
                 Global::highScore = score;
             }
             Global::lastScore = score;
@@ -126,5 +126,3 @@ void PlayScene::draw(sf::RenderWindow &w)
     w.draw(vidas);
     //w.display();
 }
-
-PlayScene::~PlayScene() {}

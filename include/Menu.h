@@ -19,7 +19,8 @@ class Menu: public BaseScene, public Global{
         sf::Font textFont;
         sf::Text titleText;
         sf::Text playText;
-        sf::Text scoreText;
+        sf::Text highScoreText;
+        sf::Text highScoreValue;
         sf::Text exitText;
 
     public:

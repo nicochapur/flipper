@@ -46,7 +46,6 @@ class PlayScene: public BaseScene, public Global{
 
     public:
         PlayScene();
-        ~PlayScene();
         //void run();
         //void add(Object *o);
         bool pause = false;
