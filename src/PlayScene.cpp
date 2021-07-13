@@ -83,7 +83,6 @@ void PlayScene::colisiones_meteor() //esto se encuentra funcional pero me gustar
     }
     if(meteor->isCollision(*spaceship)){
         vida--;
-        vidas.setString("vidas " + to_string(vida));
         if(vida==0){
             if(score > Global::highScore){
                 Global::highScore = score;
@@ -92,9 +91,10 @@ void PlayScene::colisiones_meteor() //esto se encuentra funcional pero me gustar
             cout<<"ESTA ES LA PARTE DE COLISIONES";
             cout<<Global::highScore << endl;
             cout<<score;
-            w.close();
-            //Game::getInstance().switchScene(new EndGame());
+            //w.close();
+            Game::getInstance().switchScene(new EndGame());
         }
+        vidas.setString("vidas " + to_string(vida));
     }
     //Si colisiona con el barril de arriba la velocidad aumenta y también se suman puntos.
     if((meteor->isCollision(*barrel_l))||(meteor->isCollision(*barrel_r)))

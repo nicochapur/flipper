@@ -10,6 +10,7 @@
 #include "Barrel.h"
 #include "Spaceship.h"
 #include "BaseScene.h"
+#include "EndGame.h"
 #include <vector>
 #include <string>
 #include <iostream>

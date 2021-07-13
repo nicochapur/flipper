@@ -6,7 +6,7 @@
 #include "EndGame.h"
 
 int main ( int argc, char** argv ){
-    BaseScene *scene = new EndGame();
+    BaseScene *scene = new Menu();
     Game &g = Game::create(sf::VideoMode(400, 500), scene, "SPACESHIP");
 
     g.run();
