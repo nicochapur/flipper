@@ -39,16 +39,12 @@ class PlayScene: public BaseScene, public Global{
         sf::Text txt;
         sf::Text vidas;
 
-        //vector<Object *> objects;
-
         void init();
         void colisiones_meteor();
         void aumentarScore();
 
     public:
         PlayScene();
-        //void run();
-        //void add(Object *o);
         bool pause = false;
 
         void update();

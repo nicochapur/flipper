@@ -54,7 +54,6 @@ void PlayScene::init(){//inicializacion
     BaseScene::add(spaceship);
     meteor = new Meteor();
     BaseScene::add(meteor);
-
 }
 
 void PlayScene::aumentarScore()
@@ -65,64 +64,63 @@ void PlayScene::aumentarScore()
 
 
 
-void PlayScene::colisiones_meteor() //esto se encuentra funcional pero me gustaría optimizarlo
+void PlayScene::colisiones_meteor()
 {
     if(meteor->isCollision(*defender_l))
     {
-        //Si colisiona con estos elementos la velocidad aumenta levemente, también se sumarán puntos.
         aumentarScore();
-        meteor-> velMeteor.x *= -1,2;
-        meteor-> velMeteor.y *= -1,2;
+        meteor->moveMeteor(*defender_l);
     }
     if(meteor->isCollision(*defender_r))
     {
-        //Si colisiona con estos elementos la velocidad aumenta levemente, también se sumarán puntos.
         aumentarScore();
-        meteor-> velMeteor.x *= -1,2;
-        meteor-> velMeteor.y *= -1,2;
+        meteor->moveMeteor(*defender_r);
     }
     if(meteor->isCollision(*spaceship)){
         vida--;
         if(vida==0){
-            if(score > Global::highScore){
-                Global::highScore = score;
+            cout<<Global::getHighScore();
+            if(score > Global::getHighScore()){
+                Global::setHighScore(score);
             }
-            Global::lastScore = score;
-            cout<<"ESTA ES LA PARTE DE COLISIONES";
-            cout<<Global::highScore << endl;
-            cout<<score;
+            Global::setLastScore(score);
+            int o = Global::getHighScore();
+            cout<<o;
+            cout<<"score";
             //w.close();
             Game::getInstance().switchScene(new EndGame());
         }
         vidas.setString("vidas " + to_string(vida));
+        meteor->moveMeteor(*spaceship);
     }
-    //Si colisiona con el barril de arriba la velocidad aumenta y también se suman puntos.
-    if((meteor->isCollision(*barrel_l))||(meteor->isCollision(*barrel_r)))
-    {
+    if(meteor->isCollision(*barrel_l)){
         aumentarScore();
-        meteor-> velMeteor.x *= -1;
-        meteor-> velMeteor.y *= -1;
+        meteor->moveMeteor(*barrel_l);
     }
-    if(meteor->isCollision(*barrel))
-    {
+    if(meteor->isCollision(*barrel_r)){
         aumentarScore();
-        meteor-> velMeteor.x *= -1;
-        meteor-> velMeteor.y *= -1;
+        meteor->moveMeteor(*barrel_r);
+    }
+    if(meteor->isCollision(*barrel)){
+        aumentarScore();
+        meteor->moveMeteor(*barrel);
     }
 }
 void PlayScene::update(){
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
+        if(pause == true){
+            pause = false;
+        }
+        else{pause = true;}
+        }
     if(!pause) BaseScene::update();
         colisiones_meteor();
-    /*score +=1;
-    scoreText.setString("SCORE :");*/
 }
 
 void PlayScene::draw(sf::RenderWindow &w)
 {
-    //w.clear(sf::Color::Black); //limpia la pantalla
     w.draw(spBackground);
     BaseScene::draw(w);
     w.draw(txt);
     w.draw(vidas);
-    //w.display();
 }

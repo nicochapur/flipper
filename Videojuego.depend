@@ -2985,7 +2985,7 @@
 	"Game.h"
 	"EndGame.h"
 
-1625101130 c:\users\user\desktop\facultad\laboratorio2\project\flipper\include\basescene.h
+1626913734 c:\users\user\desktop\facultad\laboratorio2\project\flipper\include\basescene.h
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	"Object.h"
@@ -3507,7 +3507,7 @@
 1625094412 c:\users\user\desktop\facultad\laboratorio2\project\flipper\include\object.h
 	<SFML/Graphics.hpp>
 
-1626135069 c:\users\user\desktop\facultad\laboratorio2\project\flipper\include\menu.h
+1626910962 c:\users\user\desktop\facultad\laboratorio2\project\flipper\include\menu.h
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	<vector>
@@ -3516,7 +3516,7 @@
 	"./BaseScene.h"
 	"./Global.h"
 
-1625094412 c:\users\user\desktop\facultad\laboratorio2\project\flipper\include\meteor.h
+1626911008 c:\users\user\desktop\facultad\laboratorio2\project\flipper\include\meteor.h
 	<SFML/Graphics/RenderWindow.hpp>
 	<SFML/Graphics/Sprite.hpp>
 	<SFML/Graphics/Texture.hpp>
@@ -3583,14 +3583,15 @@
 	"../include/Defender_R.h"
 	<SFML/Window/Keyboard.hpp>
 
-1626135069 source:c:\users\user\desktop\facultad\laboratorio2\project\flipper\src\endgame.cpp
+1626917261 source:c:\users\user\desktop\facultad\laboratorio2\project\flipper\src\endgame.cpp
 	"EndGame.h"
 	<iostream>
 	"Game.h"
 	"Menu.h"
+	"Global.h"
 	"PlayScene.h"
 
-1626135069 c:\users\user\desktop\facultad\laboratorio2\project\flipper\include\endgame.h
+1626913796 c:\users\user\desktop\facultad\laboratorio2\project\flipper\include\endgame.h
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	<vector>
@@ -3605,7 +3606,7 @@
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 
-1626135069 source:c:\users\user\desktop\facultad\laboratorio2\project\flipper\src\menu.cpp
+1626916864 source:c:\users\user\desktop\facultad\laboratorio2\project\flipper\src\menu.cpp
 	"Menu.h"
 	"Global.h"
 	<sstream>
@@ -3616,7 +3617,7 @@
 	"Game.h"
 	"PlayScene.h"
 
-1626135556 c:\users\user\desktop\facultad\laboratorio2\project\flipper\include\playscene.h
+1626915353 c:\users\user\desktop\facultad\laboratorio2\project\flipper\include\playscene.h
 	<SFML/Graphics.hpp>
 	<SFML/Audio.hpp>
 	"Meteor.h"
@@ -3633,14 +3634,14 @@
 	<iostream>
 	<sstream>
 
-1625096697 source:c:\users\user\desktop\facultad\laboratorio2\project\flipper\src\meteor.cpp
+1626910778 source:c:\users\user\desktop\facultad\laboratorio2\project\flipper\src\meteor.cpp
 	"../include/Meteor.h"
 
 1625096322 source:c:\users\user\desktop\facultad\laboratorio2\project\flipper\src\spaceship.cpp
 	"../include/Spaceship.h"
 	<SFML/Window/Keyboard.hpp>
 
-1626135933 source:c:\users\user\desktop\facultad\laboratorio2\project\flipper\src\playscene.cpp
+1626915924 source:c:\users\user\desktop\facultad\laboratorio2\project\flipper\src\playscene.cpp
 	"../include/PlayScene.h"
 	"Global.h"
 	"Game.h"
@@ -4326,8 +4327,9 @@
 1625148470 source:c:\users\usuario\documents\flipper\src\global.cpp
 	"Global.h"
 
-1625111354 c:\users\user\desktop\facultad\laboratorio2\project\flipper\include\global.h
+1626916836 c:\users\user\desktop\facultad\laboratorio2\project\flipper\include\global.h
 
-1625110908 source:c:\users\user\desktop\facultad\laboratorio2\project\flipper\src\global.cpp
+1626916836 source:c:\users\user\desktop\facultad\laboratorio2\project\flipper\src\global.cpp
+	<iostream>
 	"Global.h"
 

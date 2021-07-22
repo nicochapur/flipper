@@ -36,7 +36,7 @@ Menu::Menu(){
     // HIGHSCORE VALUE
     highScoreValue.setFont(textFont);
     highScoreValue.setColor(sf::Color::White);
-    highScoreValue.setString(to_string(Global::highScore));
+    highScoreValue.setString(to_string(Global::getHighScore()));
     highScoreValue.setCharacterSize(32);
     highScoreValue.setPosition(sf::Vector2f((400-highScoreValue.getGlobalBounds().width)/2.0, 250));
 
@@ -54,6 +54,7 @@ Menu::Menu(){
     exitText.setCharacterSize(10);
     exitText.setPosition(230, 480);
 
+    Global::setCero();
     //musica
 //    music.openFromFile("assets/music/music.ogg");
 //	music.setLoop(true);
@@ -62,7 +63,7 @@ Menu::Menu(){
 
 void Menu::update(){
 
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Tab)){//si se aprieta esc se cierra
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Tab)){
         Game::getInstance().switchScene(new PlayScene());
     }
 }
@@ -72,10 +73,10 @@ void Menu::draw(sf::RenderWindow &w){
     w.draw(spBackground);
     w.draw(titleText);
     w.draw(playText);
-    if (Global::highScore != 0) {
+    /*if (Global::getHighScore!= 0) {
         w.draw(highScoreText);
         w.draw(highScoreValue);
-    }
+    }*/
     w.draw(exitText);
     //w.display();
 }

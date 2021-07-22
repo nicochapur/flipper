@@ -15,7 +15,6 @@ class Menu: public BaseScene, public Global{
         sf::Texture texBackground;//fondo
         sf::Sprite spBackground;
         //sf::Music music;
-
         sf::Font textFont;
         sf::Text titleText;
         sf::Text playText;

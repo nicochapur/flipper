@@ -17,8 +17,10 @@ class Meteor: public Object ,public Collisionable{
         Meteor();
         void update() override;
         bool isCollision(const Collisionable& _object)const;
+        void moveMeteor(const Collisionable& p);
         sf::FloatRect getBounds() const;
         void draw(sf::RenderWindow &w) override;
+        const sf::Vector2f& getVelocity()const;
         sf::Sprite &getSprite();
         sf::Vector2f velMeteor;
 

@@ -28,6 +28,8 @@ class EndGame: public BaseScene, public Global{
         sf::Text replay;
         sf::Text exit;
 
+        Global *global;
+
     public:
         EndGame();
         void update();
