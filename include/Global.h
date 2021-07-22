@@ -6,9 +6,8 @@ class Global
 {
     public:
         Global();
-        void setHighScore(int h);
-        void setLastScore(int l);
-        void setCero();
+        void setHighScore(const int);
+        void setLastScore(const int);
         int getHighScore();
         int getLastScore();
     private:

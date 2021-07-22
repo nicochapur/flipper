@@ -29,9 +29,10 @@ class EndGame: public BaseScene, public Global{
         sf::Text exit;
 
         Global *global;
-
+        int score = 0;
+        int best = 0;
     public:
-        EndGame();
+        EndGame(int a);
         void update();
         void draw(sf::RenderWindow &w);
 };

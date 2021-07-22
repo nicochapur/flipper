@@ -1,5 +1,4 @@
 #include "../include/PlayScene.h"
-#include "Global.h"
 #include "Game.h"
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
@@ -19,21 +18,34 @@ void PlayScene::init(){//inicializacion
     spBackground.setTexture(texBackground);
 
     //texto
-    fuente.loadFromFile("assets/fonts/font.ttf");
-    txt.setFont(fuente);
+    textFont.loadFromFile("assets/fonts/font.ttf");
+    txt.setFont(textFont);
     txt.setString("score "+ to_string(score));
     txt.setFillColor(sf::Color::White);
     txt.setPosition(25,420);
     txt.setScale(0.5,0.5);
 
-    //texto de vidas
+    //texto de lifes
 
-    vidas.setFont(fuente);
-    vidas.setString("vidas " + to_string(vida));
-    vidas.setFillColor(sf::Color::White);
-    vidas.setPosition(330,420);
-    vidas.setScale(0.5,0.5);
+    lifes.setFont(textFont);
+    lifes.setString("lifes " + to_string(life));
+    lifes.setFillColor(sf::Color::White);
+    lifes.setPosition(330,420);
+    lifes.setScale(0.5,0.5);
 
+    // PAUSE
+    pauseText.setFont(textFont);
+    pauseText.setColor(sf::Color::White);
+    pauseText.setString("PAUSE");
+    pauseText.setCharacterSize(48);
+    pauseText.setPosition(sf::Vector2f((400-pauseText.getGlobalBounds().width)/2.0, 190));
+
+    // RESUME
+    resumeText.setFont(textFont);
+    resumeText.setColor(sf::Color::White);
+    resumeText.setString("Press R to resume");
+    resumeText.setCharacterSize(16);
+    resumeText.setPosition(sf::Vector2f((400-resumeText.getGlobalBounds().width)/2.0, 260));
     //musica
     /*music.openFromFile("assets/music/music.ogg");
     music.setLoop(true);
@@ -77,20 +89,11 @@ void PlayScene::colisiones_meteor()
         meteor->moveMeteor(*defender_r);
     }
     if(meteor->isCollision(*spaceship)){
-        vida--;
-        if(vida==0){
-            cout<<Global::getHighScore();
-            if(score > Global::getHighScore()){
-                Global::setHighScore(score);
-            }
-            Global::setLastScore(score);
-            int o = Global::getHighScore();
-            cout<<o;
-            cout<<"score";
-            //w.close();
-            Game::getInstance().switchScene(new EndGame());
+        life--;
+        if(life==0){
+            Game::getInstance().switchScene(new EndGame(score));
         }
-        vidas.setString("vidas " + to_string(vida));
+        lifes.setString("lifes " + to_string(life));
         meteor->moveMeteor(*spaceship);
     }
     if(meteor->isCollision(*barrel_l)){
@@ -108,12 +111,12 @@ void PlayScene::colisiones_meteor()
 }
 void PlayScene::update(){
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::P)){
-        if(pause == true){
-            pause = false;
-        }
-        else{pause = true;}
-        }
-    if(!pause) BaseScene::update();
+        pause = true;
+    }
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::R)){
+        pause = false;
+    }
+    if(!pause || life == 0) BaseScene::update();
         colisiones_meteor();
 }
 
@@ -121,6 +124,10 @@ void PlayScene::draw(sf::RenderWindow &w)
 {
     w.draw(spBackground);
     BaseScene::draw(w);
+    if (pause) {
+        w.draw(pauseText);
+        w.draw(resumeText);
+    }
     w.draw(txt);
-    w.draw(vidas);
+    w.draw(lifes);
 }

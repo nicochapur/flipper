@@ -9,6 +9,7 @@ class Game{
         void switchScene(BaseScene *scene);
         static Game &getInstance();
         static Game &create(const sf::VideoMode &videoMode, BaseScene *scene, const string &name = "");
+        int highscore = 0;
 
     private:
         sf::RenderWindow w;

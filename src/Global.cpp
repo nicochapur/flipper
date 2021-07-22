@@ -3,18 +3,16 @@ using namespace std;
 #include "Global.h"
 
 Global::Global(){
-}
-void Global::setCero(){
+    cout << "constructor";
     highScore = 0;
     lastScore = 0;
-    cout<<highScore;
-    cout<<lastScore;
 }
+
 void Global::setHighScore(int h){
-    highScore=h;
+    if (h > 0) highScore=h;
 }
 void Global::setLastScore(int l){
-    lastScore=l;
+    if (l > 0) lastScore=l;
 }
 int Global::getHighScore(){
     return highScore;

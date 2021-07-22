@@ -2,14 +2,9 @@
 #include <iostream>
 #include "Game.h"
 #include "Menu.h"
-#include "Global.h"
 #include "PlayScene.h"
 
-EndGame::EndGame(){
-    int high_score = Global::getHighScore();
-    int last_score = Global::getLastScore();
-    cout<<last_score;
-    cout<<high_score;
+EndGame::EndGame(int a){
     // LOAD BACKGROUND IMAGE
     texBackground.loadFromFile("assets/images/menu-background.jpg");
     spBackground.setTexture(texBackground);
@@ -37,7 +32,7 @@ EndGame::EndGame(){
     // SCORE VALUE
     scoreValue.setFont(textFont);
     scoreValue.setColor(sf::Color::White);
-    scoreValue.setString(to_string(last_score));
+    scoreValue.setString(to_string(a));
     scoreValue.setCharacterSize(32);
     scoreValue.setPosition(sf::Vector2f((400-scoreValue.getGlobalBounds().width)/2.0, 250));
 
@@ -58,7 +53,7 @@ EndGame::EndGame(){
     // NEW HIGHSCORE VALUE
     newHighScoreValue.setFont(textFont);
     newHighScoreValue.setColor(sf::Color::White);
-    newHighScoreValue.setString(to_string(high_score));
+    newHighScoreValue.setString(to_string(best));
     newHighScoreValue.setCharacterSize(32);
     newHighScoreValue.setPosition(sf::Vector2f((400-newHighScoreValue.getGlobalBounds().width)/2.0, 280));
 
@@ -72,7 +67,7 @@ EndGame::EndGame(){
     // HIGHSCORE VALUE
     highScoreValue.setFont(textFont);
     highScoreValue.setColor(sf::Color::White);
-    highScoreValue.setString(to_string(last_score));
+    highScoreValue.setString(to_string(a));
     highScoreValue.setCharacterSize(24);
     highScoreValue.setPosition(sf::Vector2f((400-highScoreValue.getGlobalBounds().width)/2.0, 370));
 
@@ -118,7 +113,7 @@ void EndGame::update(){
 void EndGame::draw(sf::RenderWindow &w){
     w.draw(spBackground);
     w.draw(titleText);
-    if (Global::getLastScore() > Global::getHighScore()) {
+    if (score > best) {
         w.draw(newText);
         w.draw(newHighScore);
         w.draw(newHighScoreValue);

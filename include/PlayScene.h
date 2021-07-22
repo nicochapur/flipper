@@ -18,7 +18,7 @@
 
 using namespace std;
 
-class PlayScene: public BaseScene, public Global{
+class PlayScene: public BaseScene{
     private:
         sf::RenderWindow w; //sfml
         sf::Texture texBackground;//fondo
@@ -32,12 +32,16 @@ class PlayScene: public BaseScene, public Global{
         Spaceship *spaceship;
         Meteor *meteor;
 
-        int vida = 3;
+        int life = 1;
         int score = 0;
+        bool pause = false;
+
         //textos
-        sf::Font fuente;
+        sf::Font textFont;
         sf::Text txt;
-        sf::Text vidas;
+        sf::Text lifes;
+        sf::Text resumeText;
+        sf::Text pauseText;
 
         void init();
         void colisiones_meteor();
@@ -45,7 +49,6 @@ class PlayScene: public BaseScene, public Global{
 
     public:
         PlayScene();
-        bool pause = false;
 
         void update();
         void draw(sf::RenderWindow &w);

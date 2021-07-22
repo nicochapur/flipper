@@ -26,26 +26,12 @@ Menu::Menu(){
     titleText.setCharacterSize(48);
     titleText.setPosition(sf::Vector2f((400-titleText.getGlobalBounds().width)/2.0, 50));
 
-    // HIGHSCORE TITLE
-    highScoreText.setFont(textFont);
-    highScoreText.setColor(sf::Color::White);
-    highScoreText.setString("Highscore");
-    highScoreText.setCharacterSize(24);
-    highScoreText.setPosition(sf::Vector2f((400-highScoreText.getGlobalBounds().width)/2.0, 200));
-
-    // HIGHSCORE VALUE
-    highScoreValue.setFont(textFont);
-    highScoreValue.setColor(sf::Color::White);
-    highScoreValue.setString(to_string(Global::getHighScore()));
-    highScoreValue.setCharacterSize(32);
-    highScoreValue.setPosition(sf::Vector2f((400-highScoreValue.getGlobalBounds().width)/2.0, 250));
-
     // PLAY
     playText.setFont(textFont);
     playText.setColor(sf::Color::White);
     playText.setString("Press TAB to start");
     playText.setCharacterSize(16);
-    playText.setPosition(sf::Vector2f((400-playText.getGlobalBounds().width)/2.0, 380));
+    playText.setPosition(sf::Vector2f((400-playText.getGlobalBounds().width)/2.0, 250));
 
     // EXIT OPTION
     exitText.setFont(textFont);
@@ -54,7 +40,6 @@ Menu::Menu(){
     exitText.setCharacterSize(10);
     exitText.setPosition(230, 480);
 
-    Global::setCero();
     //musica
 //    music.openFromFile("assets/music/music.ogg");
 //	music.setLoop(true);
@@ -69,14 +54,8 @@ void Menu::update(){
 }
 
 void Menu::draw(sf::RenderWindow &w){
-    //w.clear(sf::Color::Black); //limpia la pantalla
     w.draw(spBackground);
     w.draw(titleText);
     w.draw(playText);
-    /*if (Global::getHighScore!= 0) {
-        w.draw(highScoreText);
-        w.draw(highScoreValue);
-    }*/
     w.draw(exitText);
-    //w.display();
 }
